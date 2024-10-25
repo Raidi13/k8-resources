@@ -7,11 +7,11 @@ spec :
  - name : nginx
    image : nginx
    resources :
-    request :
+     request :
       cpu : 100m
       memory : 68mi
-    limits :
-      cpu : 120m
-      memory : 100mi
+     limits :
+       cpu : 120m
+       memory : 100mi
 
       # How can you restrict the container.
