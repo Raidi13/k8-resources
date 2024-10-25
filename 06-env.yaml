@@ -11,4 +11,5 @@ spec :
       value : devops
     - name : duration
       value : "120hrs"
-      
+    - name : trainer
+      value : "shiva"
