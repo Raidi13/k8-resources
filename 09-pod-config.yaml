@@ -5,23 +5,23 @@ metadata:
 spec:
   containers:
   - name: nginx
-    images: nginx
+    image: nginx
     env :
       - name: course
         valueFrom:
           configMapKeyRef:
-          name: nginx-config # name of the config map you are referring to
-          key : course # env.name and config map key name can be diffrent
+            name: nginx-config # name of the config map you are referring to
+            key : course # env.name and config map key name can be diffrent
       - name: duration
         valueFrom:
           configMapKeyRef:
-          name: nginx-config
-          key : "120hrs" # env .name and config map key
+            name: nginx-config
+            key : "120hrs" # env .name and config map key
       - name: trainer
         valueFrom:
           configMapKeyRef:
-          name: nginx-config
-          key : "shiva"
+            name: nginx-config
+            key : "shiva"
 
           # valueFrom: , configMapKeyRef: check befor going apply naming 
         
