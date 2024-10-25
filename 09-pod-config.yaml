@@ -17,8 +17,8 @@ spec:
         configmapkeyref:
           name: nginx-config
           key : "120hrs" # env .name and config map key
-      - name: trainer
-        valuefrom:
-        configmapkeyref:
-          name: nginx-config
-          key : "shiva"
+      # - name: trainer
+      #   valuefrom:
+      #   configmapkeyref:
+      #     name: nginx-config
+      #     key : "shiva"
