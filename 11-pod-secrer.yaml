@@ -1,0 +1,11 @@
+apiVesion : v1
+kind: Pod
+metadata:
+  name: pod-secret
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    envFrom:
+    - secretFrom: 
+      name: pod-secret
