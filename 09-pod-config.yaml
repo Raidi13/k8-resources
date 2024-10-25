@@ -16,12 +16,12 @@ spec:
         valueFrom:
           configMapKeyRef:
             name: nginx-config
-            key : "120hrs" # env .name and config map key
+            key : duration # env .name and config map key
       - name: trainer
         valueFrom:
           configMapKeyRef:
             name: nginx-config
-            key : "shiva"
+            key : trainer
 
           # valueFrom: , configMapKeyRef: check befor going apply naming 
         
