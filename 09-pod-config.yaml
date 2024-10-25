@@ -1,0 +1,19 @@
+apiversion: v1
+kind:
+metadata:
+  name:
+spec:
+  containers:
+  - name: nginx
+    images: nginx
+    env :
+      - name: course
+        valuefrom:
+        configmapkeyref:
+          name: nginx-config # name of the config map you are referring to
+          key : course #env.name and config map key name can be diffrent
+      - name: duration
+        valuefrom:
+        configmapkeyref:
+          name: nginx-config
+          key : duration # env .name and config map key
