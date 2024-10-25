@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: nginx
 spec:
-  selectors:
+  selector:
     project: expense
     module: backend
     enviroment: dev
-  port:
+  ports:
   - name: nginx-svc-port
     protocol: TCP
     port: 80 # service port
