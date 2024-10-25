@@ -8,17 +8,20 @@ spec:
     images: nginx
     env :
       - name: course
-        valuefrom:
+        valueFrom:
         configMapKeyRef:
           name: nginx-config # name of the config map you are referring to
           key : course # env.name and config map key name can be diffrent
       - name: duration
-        valuefrom:
+        valueFrom:
         configMapKeyRef:
           name: nginx-config
           key : "120hrs" # env .name and config map key
       - name: trainer
-        valuefrom:
+        valueFrom:
         configMapKeyRef:
           name: nginx-config
           key : "shiva"
+
+          # valueFrom: , configMapKeyRef: check befor going apply naming 
+        
