@@ -1,0 +1,14 @@
+apiVersion : v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selectors:
+    project: expense
+    module: backend
+    enviroment: dev
+  port:
+  - name: nginx-svc-port
+    protocol: TCP
+    port: 80 # service port
+    targetport: 80 #container port
