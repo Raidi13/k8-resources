@@ -1,3 +1,4 @@
+#pv is the physical representation of storage 
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -12,7 +13,7 @@ spec:
     fsType: ext4
     volumeHandle: vol-03c92999763219936
 ---
-#pvc we have the storage we are claiming now 
+#pvc we have the storage we are claiming now # in pvc we have pv information
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -25,3 +26,21 @@ spec:
   resources:
     requests:
       storage: 5Gi
+
+---
+#pod get the storage through the pvc
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ebs-static
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts: # docker run  -v hostpath:containerpath.
+    - name: ebs-static
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: ebs-static # this will come from PVC
+    persistentVolumeClaim:
+      claimName: ebs-static
