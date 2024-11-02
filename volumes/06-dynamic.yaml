@@ -41,7 +41,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    purpose: efs-expense
+    purpose: efs-dynamic
   ports:
   - name: nginx-svc-port
     protocol: TCP
