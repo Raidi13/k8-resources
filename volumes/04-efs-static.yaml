@@ -16,6 +16,7 @@ spec:
     volumeHandle: # id of sg network
 
 ---
+#pvc.
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
