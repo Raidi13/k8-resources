@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: nginx:s
 ---
 apiVersion : v1
 kind: Service
@@ -31,7 +31,7 @@ metadata:
   name: nginx
 spec:
   selector:
-    mtier: frontend
+    tier: frontend
     app: nginx
   ports:
   - name: nginx-svc-port
