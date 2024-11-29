@@ -15,52 +15,52 @@ spec:
     driver: efs.csi.aws.com
     volumeHandle: fs-0132fb8eb3b7564c3 # id of sg network
 
-# ---
-# #pvc.
-# apiVersion: v1
-# kind: PersistentVolumeClaim
-# metadata:
-#   name: expense-efs
-# spec:
-#   volumeName: expense-efs
-#   accessModes:
-#     - ReadWriteOnce
-#   storageClassName: -expenseefs
-#   resources:
-#     requests:
-#       storage: 5Gi
-# ---
-# # pod get the storage through the pvc .
-# apiVersion: v1
-# kind: Pod
-# metadata:
-#   name: efs-static
-#   labels:
-#     purpose: efs-static
-# spec:
-#   containers:
-#   - name: nginx
-#     image: nginx
-#     volumeMounts: # docker run  -v hostpath:containerpath.
-#     - name: expense-efs
-#       mountPath: /usr/share/nginx/html
-#   volumes:
-#   - name: efs-static # this will come from PVC
-#     persistentVolumeClaim:
-#       claimName: expense-efs
-# ---
-# #Service 
-# apiVersion : v1
-# kind: Service
-# metadata:
-#   name: nginx
-# spec:
-#   type: LoadBalancer
-#   selector:
-#     purpose: ebs-static
-#   ports:
-#   - name: nginx-svc-port
-#     protocol: TCP
-#     port: 80 # service port
-#     targetPort: 80 #container port
-#     nodePort: 30007
+---
+#pvc.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: expense-efs
+spec:
+  volumeName: expense-efs
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: -expenseefs
+  resources:
+    requests:
+      storage: 5Gi
+---
+# pod get the storage through the pvc .
+apiVersion: v1
+kind: Pod
+metadata:
+  name: efs-static
+  labels:
+    purpose: efs-static
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts: # docker run  -v hostpath:containerpath.
+    - name: expense-efs
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: efs-static # this will come from PVC
+    persistentVolumeClaim:
+      claimName: expense-efs
+---
+#Service 
+apiVersion : v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: ebs-static
+  ports:
+  - name: nginx-svc-port
+    protocol: TCP
+    port: 80 # service port
+    targetPort: 80 #container port
+    nodePort: 30007
