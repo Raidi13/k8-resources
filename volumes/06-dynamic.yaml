@@ -7,7 +7,7 @@ spec:
   storageClassName: "efs-expense" # Empty string must be explicitly set otherwise default StorageClass will be set
   # volumeName: ebs-dynamic #we are not creating manually
   accessModes:
-    - ReadWritemany
+    - ReadWriteMany
   resources:
     requests:
       storage: 3Gi
