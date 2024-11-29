@@ -24,7 +24,7 @@ spec:
   volumeName: expense-efs
   accessModes:
     - ReadWriteOnce
-  storageClassName: -expenseefs
+  storageClassName: ""
   resources:
     requests:
       storage: 5Gi
