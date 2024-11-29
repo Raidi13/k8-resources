@@ -15,19 +15,19 @@ spec:
     driver: efs.csi.aws.com
     volumeHandle: fs-0132fb8eb3b7564c3
 ---
-# #pvc.
-# apiVersion: v1
-# kind: PersistentVolumeClaim
-# metadata:
-#   name: expense-efs
-# spec:
-#   volumeName: expense-efs
-#   accessModes:
-#     - ReadWriteOnce
-#   storageClassName: -expenseefs
-#   resources:
-#     requests:
-#       storage: 5Gi
+#pvc.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: expense-efs
+spec:
+  volumeName: expense-efs
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: -expenseefs
+  resources:
+    requests:
+      storage: 5Gi
 # ---
 # # pod get the storage through the pvc .
 # apiVersion: v1
