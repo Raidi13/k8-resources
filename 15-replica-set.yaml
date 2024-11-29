@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:s
+        image: nginx:stable:perls
 ---
 apiVersion : v1
 kind: Service
