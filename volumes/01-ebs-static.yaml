@@ -11,7 +11,7 @@ spec:
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle: vol-03c92999763219936
+    volumeHandle: vol-077a794ce73aee909
 ---
 #pvc we have the storage we are claiming now # in pvc we have pv information
 apiVersion: v1
