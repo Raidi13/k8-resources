@@ -15,4 +15,11 @@ spec:
 
     # nginx is not connected 
 
+    # kubectl apply -f 12-service.yaml
+    # --> kubectl get services
+     # this will give the output of services
+
+     # kubectl exec -it annotations -- bash
+     # curl nginx
+
 
