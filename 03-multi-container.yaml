@@ -12,6 +12,4 @@ spec:
     command: ["sleep","100"]
 
 
-  # can to pod have same name :- No 
-
-
+  # can two pod have same name :- No 
