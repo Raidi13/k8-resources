@@ -5,7 +5,6 @@ metadata:
   name: ebs-dynamic
 spec:
   storageClassName: "expense-ebs" # Empty string must be explicitly set otherwise default StorageClass will be set
-  # volumeName: ebs-dynamic #we are not creating manually
   accessModes:
     - ReadWriteOnce
   resources:
