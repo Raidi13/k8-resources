@@ -5,11 +5,8 @@ metadata:
 data:
   course: devops
   duration: "120hrs"
-  trainer : "shiva"
+  trainer : "raidi"
 # spec:
 #   containers :
 #   - name :
 #     image :
-
-
-

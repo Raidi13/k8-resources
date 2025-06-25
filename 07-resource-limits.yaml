@@ -9,8 +9,14 @@ spec:
     resources:
       requests:
         cpu: 100m
-        memory: 68Mi
+        memory: 68Mi # Milli core
       limits:
         cpu: 120m
         memory: 100Mi
       # How can you restrict the container.
+      
+      # where as in k8 it will consume the resource how much it need
+      # if some thing going wrong in loop it will occupy entire Host resources
+        # we need to allocate the resources to the container
+
+      #in docker vertulization under like host will block the resources 
