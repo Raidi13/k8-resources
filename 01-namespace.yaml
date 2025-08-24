@@ -5,3 +5,18 @@ metadata:
    labels:
       project: expense
       environment: dev
+
+# apiversion: v1
+# kind: limitrange
+# metadata:
+# name: namespace-name
+# namespace: name-namespace
+# spec:
+# limits:
+# - default:
+		#max cpu a container can use
+#       memory: "1Gi" #max memory can use
+#       defaultrequest:
+#       cpu: "0.5" #default request cpu
+#       memory: "512mi" #default request memory
+#       type: container

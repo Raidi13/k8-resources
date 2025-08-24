@@ -10,6 +10,3 @@ spec:
   - name: almalinux
     image: almalinux:9
     command: ["sleep","100"]
-
-
-  # can two pod have same name :- No 
